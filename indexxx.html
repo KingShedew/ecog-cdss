@@ -96,17 +96,17 @@ body {
 }
 
 /* glow sweep effect */
-.game-tile::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(0,229,255,0.15), transparent 60%);
-  transform: rotate(25deg);
-  opacity: 0;
-  transition: 0.3s;
+.game-tile {
+  background: linear-gradient(145deg, #1b1b1b, #0e0e0e);
+  border-radius: 14px;
+  width: 360px;
+  padding: 10px;
+  text-align: center;
+  transition: 0.2s;
+  border: 2px solid rgba(0, 255, 255, 0.15);
+  box-shadow:
+    0 0 8px rgba(0, 255, 255, 0.08),
+    inset 0 0 10px rgba(0,0,0,0.5);
 }
 
 .game-tile:hover::before {
@@ -122,9 +122,11 @@ body {
 /* ===== IMAGE (PERFECT SQUARE FIX) ===== */
 .game-icon {
   width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 12px;
+  height: 360px;
+  object-fit: cover; /* keeps Flash-style clean crop instead of ugly stretch */
+  border-radius: 8px;
+  display: block;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.6);
 }
 
 /* ===== TITLE ===== */
