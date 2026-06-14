@@ -11,7 +11,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #0f0f0f;
+  background: radial-gradient(circle at top, #121212, #050505);
   color: white;
 }
 
@@ -20,41 +20,49 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #1a1a1a;
-  padding: 10px 20px;
+  padding: 14px 20px;
+  background: rgba(20, 20, 20, 0.75);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
+/* logo */
 .logo {
   font-size: 22px;
   font-weight: bold;
+  background: linear-gradient(90deg, #00e5ff, #7c4dff, #ff4081);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* SEARCH */
+/* search */
 .search-box {
-  padding: 6px;
-  border-radius: 6px;
+  padding: 8px 10px;
+  border-radius: 10px;
   border: none;
   outline: none;
-}
-
-/* ===== CATEGORY BUTTONS ===== */
-.categories {
-  text-align: center;
-  margin: 15px;
-}
-
-.categories button {
-  margin: 5px;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 6px;
-  background: #2a2a2a;
+  background: #1c1c1c;
   color: white;
-  cursor: pointer;
 }
 
-.categories button:hover {
-  background: #444;
+/* ===== NAV BUTTONS ===== */
+.nav-button {
+  display: inline-block;
+  padding: 10px 16px;
+  margin: 8px;
+  background: linear-gradient(135deg, #00e5ff, #7c4dff);
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: 0.25s;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.nav-button:hover {
+  transform: translateY(-2px) scale(1.05);
+  background: linear-gradient(135deg, #ff4081, #7c4dff);
+  box-shadow: 0 0 20px rgba(124,77,255,0.5);
 }
 
 /* ===== GRID ===== */
@@ -62,55 +70,77 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  padding: 20px;
+  gap: 22px;
+  padding: 25px;
 }
 
-/* ===== GAME CARD ===== */
+/* ===== GAME TILE ===== */
 .game-link {
   text-decoration: none;
 }
 
+/* FLASH COLORS CARD STYLE */
 .game-tile {
-  background: #1c1c1c;
-  border-radius: 12px;
-  width: 180px;
+  width: 190px;
   padding: 10px;
   text-align: center;
-  transition: 0.2s;
+
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+
+  transition: 0.25s ease;
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* glow sweep effect */
+.game-tile::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,229,255,0.15), transparent 60%);
+  transform: rotate(25deg);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.game-tile:hover::before {
+  opacity: 1;
 }
 
 .game-tile:hover {
-  transform: scale(1.08);
-  background: #2a2a2a;
-  box-shadow: 0 0 15px rgba(255,255,255,0.15);
+  transform: translateY(-6px) scale(1.05);
+  border-color: rgba(0,229,255,0.4);
+  box-shadow: 0 0 25px rgba(0,229,255,0.2);
 }
 
-/* ===== IMAGE ===== */
+/* ===== IMAGE (PERFECT SQUARE FIX) ===== */
 .game-icon {
   width: 100%;
-  border-radius: 10px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 /* ===== TITLE ===== */
 .game-title {
   font-size: 14px;
-  margin-top: 8px;
+  margin-top: 10px;
+  opacity: 0.9;
 }
 
 /* ===== POPULAR ===== */
 .popular {
-  border: 2px solid red;
+  border: 1px solid #ff4081;
+  box-shadow: 0 0 18px rgba(255,64,129,0.25);
 }
 
-  .game-icon {
-    width: 100%;
-    aspect-ratio: 1 / 1;   /* forces perfect square */
-    object-fit: cover;     /* fills square without stretching */
-    border-radius: 10px;   /* optional: matches your style */
-}
 </style>
-
   
 </head>
 
