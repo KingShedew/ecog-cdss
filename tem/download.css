@@ -1,0 +1,43 @@
+	.download-tile {
+		width: 200px;
+		height: 180px;
+		background: linear-gradient(45deg, #111, #2a2a2a);
+		border-radius: 12px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 10px;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+		color: white;
+		font-family: Arial, sans-serif;
+		transition: 0.2s;
+	}
+
+	.download-tile:hover {
+		transform: scale(1.05);
+	}
+
+	.download-title {
+		font-size: 18px;
+		font-weight: bold;
+		text-align: center;
+		margin-bottom: 12px;
+	}
+
+	.download-btn {
+		padding: 10px 14px;
+		background: #00c6ff;
+		border: none;
+		border-radius: 8px;
+		color: white;
+		font-weight: bold;
+		cursor: pointer;
+		text-decoration: none;
+		transition: 0.2s;
+	}
+
+	.download-btn:hover {
+		background: #00f2fe;
+		transform: scale(1.05);
+	}
